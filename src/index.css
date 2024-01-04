@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@200;300;400;500&family=Open+Sans:wght@400;600&family=Roboto:wght@700&family=Rubik:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        @apply font-body
+    }
+
+    a {
+        @apply no-underline cursor-pointer
+    }
+
+    ul li .nav {
+        @apply border-b-2 border-b-transparent hover:border-b-primary hover:border-b-[3px] font-extrabold
+    }
+
+    .hero {
+        @apply pt-[100px] flex flex-col justify-center items-center
+    }
+
+    .btn {
+        @apply bg-primary border-[2px] border-solid border-primary  text-white hover:cursor-pointer
+    }
+
+    .btn-disabled {
+        @apply bg-primary-light border-[2px] border-solid border-primary-light cursor-default text-white
+    }
+
+    .btn-secondary {
+        @apply bg-transparent border-[2px] border-solid border-primary text-primary hover:cursor-pointer
+    }
+
+    .active {
+        @apply text-black font-bold bg-white
+    }
+
+    .normal {
+        @apply text-white hover:bg-black
+    }
+
+    .inactive {
+        @apply opacity-0 pointer-events-none
+    }
+}
+
+.inner-shadow {
+    box-shadow: inset rgb(128, 128, 128) 0 0 20px -12px;
+}
+
+html::-webkit-scrollbar {
+    width: 2vh;
+}
+
+html::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #F2AF5C;
+    box-shadow: 2px 2px 5px #F2AF5C;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: #f8f4f4;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 50px;
+    --b: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    padding: 1px;
+    background: conic-gradient(#0000 10%,#FFFFFF) content-box;
+    -webkit-mask:
+            repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg),
+            radial-gradient(farthest-side,#0000 calc(100% - var(--b) - 1px),#000 calc(100% - var(--b)));
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    animation:l4 1s infinite steps(10);
+}
+.loader-white {
+    width: 50px;
+    --b: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    padding: 1px;
+    background: conic-gradient(#FFFFFF 10%,#000000) content-box;
+    -webkit-mask:
+            repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg),
+            radial-gradient(farthest-side,#0000 calc(100% - var(--b) - 1px),#000 calc(100% - var(--b)));
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    animation:l4 1s infinite steps(10);
+}
+@keyframes l4 {to{transform: rotate(1turn)}}
